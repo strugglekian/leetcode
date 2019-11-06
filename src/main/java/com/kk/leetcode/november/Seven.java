@@ -6,12 +6,31 @@ package com.kk.leetcode.november;
  */
 public class Seven {
     public static void main(String[] args) {
-        System.out.println(reverse(1234567899));
+//        System.out.println(reverse(1234567899));
+        System.out.println(Integer.MAX_VALUE%10);
+        System.out.println(Integer.MIN_VALUE%10);
+    }
+
+    public static int reverse2(int x) {
+        int result = 0;
+        while (x != 0) {
+            int pop = x % 10;
+            x /= 10;
+            if (Integer.MAX_VALUE / 10 < result || (Integer.MAX_VALUE / 10 == result && Integer.MAX_VALUE % 10 < x)) {
+                return 0;
+            }
+            if (Integer.MIN_VALUE / 10 > result || (Integer.MIN_VALUE / 10 == result && Integer.MIN_VALUE % 10 > x)) {
+                return 0;
+            }
+            result = result * 10 + pop;
+        }
+        return result;
 
     }
 
     /**
      * 应该不是出题的本意，不过也算计算出来了。。明天继续努力
+     *
      * @param x
      * @return
      */
@@ -36,6 +55,7 @@ public class Seven {
             return 0;
         }
         return s2;
-
     }
+
+
 }
