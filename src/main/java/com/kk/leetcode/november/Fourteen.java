@@ -23,9 +23,29 @@ package com.kk.leetcode.november;
 public class Fourteen {
     public static void main(String[] args) {
 //        System.out.println(longestCommonPrefix(new String[]{"a"}));
+        System.out.println(lcp3(new String[]{""}));
         System.out.println("ss".indexOf("ss"));
     }
 
+    /**
+     * 方法三，好像跟我想的有些类似
+     */
+    public static String lcp3(String[] strs) {
+        if (null == strs || strs.length == 0) {
+            return "";
+        }
+        String s1 = strs[0];
+        for (int i = 0; i < s1.length(); i++) {
+            char c = s1.charAt(i);
+            for (int j = 1; j < strs.length; j++) {
+                if (i == strs[j].length()||c != strs[j].charAt(i) ) {
+                    return s1.substring(0, i);
+                }
+            }
+        }
+        return s1;
+
+    }
 
     /**
      * 方法二,两两比较，所有的数组循环一次
