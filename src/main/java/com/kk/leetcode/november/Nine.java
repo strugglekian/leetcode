@@ -1,5 +1,7 @@
 package com.kk.leetcode.november;
 
+import java.util.*;
+
 /**
  * @author kian
  * @date 2019/11/7
@@ -23,12 +25,14 @@ package com.kk.leetcode.november;
 
 
 public class Nine {
+
     public static void main(String[] args) {
+        ArrayList<Object> objects = new ArrayList<>();
 
     }
 
     public boolean isPalindrome(int x) {
-        int temp=x;
+        int temp = x;
         if (x < 0) {
             return false;
         }
